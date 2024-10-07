@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface UserDAO extends JpaRepository<User,Integer> {
+//    void findByEmail(String s);
 
     @Query(value = "select * from User t where t.email= :email ",nativeQuery = true)
     public Optional<User> findByEmail(@Param("email") String email);

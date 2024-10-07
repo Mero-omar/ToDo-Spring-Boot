@@ -29,7 +29,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/register","/auth/login")
+                        .requestMatchers("/auth/register","/auth/login","/swagger-ui.html")
                         .permitAll()  // Public routes
                         .anyRequest().
                         authenticated()  // All other routes need authentication

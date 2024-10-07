@@ -28,6 +28,9 @@ public class Service implements ServiceInter{
 
     @Override
     public List<Task> getTasks(String currentUserEmail) {
+
+
+//        userDAO.findByEmail("");
         User user=userDAO.findByEmail(currentUserEmail).orElseThrow(() -> new UsernameNotFoundException("User not Found"));
         Long user_id=user.getId();
         List<Task>AllTasks=taskDAO.findAllByUser(user_id);
